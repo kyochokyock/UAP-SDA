@@ -158,3 +158,38 @@ def show_gui():
             manager.impor_jadwal_csv(filename)  # Memanggil fungsi impor_jadwal_csv dari JadwalManager
             messagebox.showinfo("Sukses", "Impor dari CSV berhasil!")  # Menampilkan messagebox sukses
             lihat_jadwal()  # Refresh daftar jadwal setelah mengimpor
+
+
+#List pada GUI
+    manager = JadwalManager()  # Membuat objek JadwalManager
+
+    root = tk.Tk()  # Membuat jendela utama Tkinter
+    root.title("Sistem Manajemen Jadwal Kegiatan Pribadi (Oleh Team 6)")  # Memberi judul pada jendela
+
+    # Mengatur warna latar belakang
+    root.configure(bg="#273c75")
+
+    # Judul
+    title_font = tkfont.Font(family="Courier New", size=36, weight="bold")  # Mengatur font untuk judul
+
+    title_label = tk.Label(root, text="Team 6 Schedule Management", bg="#273c75", fg="#ffffff", font=title_font)  # Label untuk judul
+    title_label.pack(pady=10)  # Menampilkan judul dengan padding
+
+    frame_input = tk.Frame(root, bg="#273c75")  # Frame untuk input jadwal
+    frame_input.pack(pady=10)
+
+    tk.Label(frame_input, text="Kegiatan:", bg="#273c75", fg="#ffffff").grid(row=0, column=0, padx=5, pady=5)  # Label untuk kegiatan
+    entry_kegiatan = tk.Entry(frame_input, bg="#ffffff", fg="#000000")  # Entry untuk mengisi kegiatan
+    entry_kegiatan.grid(row=0, column=1, padx=5, pady=5)
+
+    tk.Label(frame_input, text="Tanggal:", bg="#273c75", fg="#ffffff").grid(row=1, column=0, padx=5, pady=5)  # Label untuk tanggal
+    entry_tanggal = tk.Entry(frame_input, bg="#ffffff", fg="#000000")  # Entry untuk mengisi tanggal
+    entry_tanggal.grid(row=1, column=1, padx=5, pady=5)
+
+    tk.Label(frame_input, text="Waktu:", bg="#273c75", fg="#ffffff").grid(row=2, column=0, padx=5, pady=5)  # Label untuk waktu
+    entry_waktu = tk.Entry(frame_input, bg="#ffffff", fg="#000000")  # Entry untuk mengisi waktu
+    entry_waktu.grid(row=2, column=1, padx=5, pady=5)
+
+    tk.Label(frame_input, text="Deskripsi:", bg="#273c75", fg="#ffffff").grid(row=3, column=0, padx=5, pady=5)  # Label untuk deskripsi
+    entry_deskripsi = tk.Entry(frame_input, bg="#ffffff", fg="#000000")  # Entry untuk mengisi deskripsi
+    entry_deskripsi.grid(row=3, column=1, padx=5, pady=5)
