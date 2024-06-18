@@ -193,3 +193,64 @@ def show_gui():
     tk.Label(frame_input, text="Deskripsi:", bg="#273c75", fg="#ffffff").grid(row=3, column=0, padx=5, pady=5)  # Label untuk deskripsi
     entry_deskripsi = tk.Entry(frame_input, bg="#ffffff", fg="#000000")  # Entry untuk mengisi deskripsi
     entry_deskripsi.grid(row=3, column=1, padx=5, pady=5)
+
+ tk.Button(root,
+              text="Tambah Jadwal",
+              command=tambah_jadwal,
+              bg="#74b9ff",
+              fg="#000000").pack(pady=5)  # Button untuk menambah jadwal
+
+    tk.Button(root,  #List GUI
+              text="Lihat Jadwal",
+              command=lihat_jadwal,
+              bg="#74b9ff",
+              fg="#000000").pack(pady=5)  # Button untuk melihat jadwal
+
+    frame_cari = tk.Frame(root, bg="#273c75")  # Frame untuk mencari jadwal
+    frame_cari.pack(pady=10)
+
+    tk.Label(frame_cari, text="Cari Jadwal:", bg="#273c75", fg="#ffffff").grid(row=0, column=0, padx=5, pady=5)  # Label untuk mencari jadwal
+    entry_cari = tk.Entry(frame_cari, bg="#ffffff", fg="#000000")  # Entry untuk mengisi keyword pencarian
+    entry_cari.grid(row=0, column=1, padx=5, pady=5)
+
+    tk.Button(frame_cari,
+              text="Cari",
+              command=cari_jadwal,
+              bg="#74b9ff",
+              fg="#000000").grid(row=0, column=2, padx=5)  # Button untuk melakukan pencarian
+
+    tk.Button(root,  #List GUI
+              text="Import dari CSV",
+              command=import_csv,
+              bg="#74b9ff",
+              fg="#000000").pack(pady=5)  # Button untuk mengimpor dari CSV
+
+    frame_hapus = tk.Frame(root, bg="#273c75")  # Frame untuk menghapus jadwal
+    frame_hapus.pack(pady=10)
+
+    tk.Label(frame_hapus, text="Hapus Jadwal (ID):", bg="#273c75", fg="#ffffff").grid(row=0, column=0, padx=5, pady=5)  # Label untuk menghapus jadwal
+    entry_hapus = tk.Entry(frame_hapus, bg="#ffffff", fg="#000000")  # Entry untuk mengisi ID jadwal yang akan dihapus
+    entry_hapus.grid(row=0, column=1, padx=5, pady=5)
+
+    tk.Button(frame_hapus,
+              text="Hapus",
+              command=hapus_jadwal,
+              bg="#e74c3c",
+              fg="#ffffff").grid(row=0, column=2, padx=5, pady=5)  # Button untuk menghapus jadwal
+
+    tk.Button(root,  #List GUI
+              text="Update Jadwal",
+              command=update_jadwal_popup,
+              bg="#f39c12",
+              fg="#ffffff").pack(pady=5)  # Button untuk mengupdate jadwal
+
+    output_text = tk.Text(root,
+                          height=10,
+                          width=50,
+                          bg="#ffffff",
+                          fg="#000000")  # Text untuk menampilkan output jadwal
+    output_text.pack(pady=10)
+
+    root.mainloop()  # Memulai loop utama Tkinter untuk menampilkan GUI
+
+show_gui()  # Memanggil fungsi untuk menampilkan GUI
