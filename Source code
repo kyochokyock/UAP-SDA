@@ -161,96 +161,96 @@ def show_gui():
 
 
 #List pada GUI
-    manager = JadwalManager()  # Membuat objek JadwalManager
+    manager = JadwalManager()
 
-    root = tk.Tk()  # Membuat jendela utama Tkinter
-    root.title("Sistem Manajemen Jadwal Kegiatan Pribadi (Oleh Team 6)")  # Memberi judul pada jendela
+    root = tk.Tk()
+    root.title("Sistem Manajemen Jadwal Kegiatan Pribadi (Oleh Team 6)")
 
     # Mengatur warna latar belakang
     root.configure(bg="#273c75")
 
     # Judul
-    title_font = tkfont.Font(family="Courier New", size=36, weight="bold")  # Mengatur font untuk judul
+    title_font = tkfont.Font(family="Courier New", size=36, weight="bold")
 
-    title_label = tk.Label(root, text="Team 6 Schedule Management", bg="#273c75", fg="#ffffff", font=title_font)  # Label untuk judul
-    title_label.pack(pady=10)  # Menampilkan judul dengan padding
+    title_label = tk.Label(root, text="Team 6 Schedule Management", bg="#273c75", fg="#ffffff", font=title_font)
+    title_label.pack(pady=10)
 
-    frame_input = tk.Frame(root, bg="#273c75")  # Frame untuk input jadwal
+    frame_input = tk.Frame(root, bg="#273c75")
     frame_input.pack(pady=10)
 
-    tk.Label(frame_input, text="Kegiatan:", bg="#273c75", fg="#ffffff").grid(row=0, column=0, padx=5, pady=5)  # Label untuk kegiatan
-    entry_kegiatan = tk.Entry(frame_input, bg="#ffffff", fg="#000000")  # Entry untuk mengisi kegiatan
+    tk.Label(frame_input, text="Kegiatan:", bg="#273c75", fg="#ffffff").grid(row=0, column=0, padx=5, pady=5)
+    entry_kegiatan = tk.Entry(frame_input, bg="#ffffff", fg="#000000")
     entry_kegiatan.grid(row=0, column=1, padx=5, pady=5)
 
-    tk.Label(frame_input, text="Tanggal:", bg="#273c75", fg="#ffffff").grid(row=1, column=0, padx=5, pady=5)  # Label untuk tanggal
-    entry_tanggal = tk.Entry(frame_input, bg="#ffffff", fg="#000000")  # Entry untuk mengisi tanggal
+    tk.Label(frame_input, text="Tanggal:", bg="#273c75", fg="#ffffff").grid(row=1, column=0, padx=5, pady=5)
+    entry_tanggal = tk.Entry(frame_input, bg="#ffffff", fg="#000000")
     entry_tanggal.grid(row=1, column=1, padx=5, pady=5)
 
-    tk.Label(frame_input, text="Waktu:", bg="#273c75", fg="#ffffff").grid(row=2, column=0, padx=5, pady=5)  # Label untuk waktu
-    entry_waktu = tk.Entry(frame_input, bg="#ffffff", fg="#000000")  # Entry untuk mengisi waktu
+    tk.Label(frame_input, text="Waktu:", bg="#273c75", fg="#ffffff").grid(row=2, column=0, padx=5, pady=5)
+    entry_waktu = tk.Entry(frame_input, bg="#ffffff", fg="#000000")
     entry_waktu.grid(row=2, column=1, padx=5, pady=5)
 
-    tk.Label(frame_input, text="Deskripsi:", bg="#273c75", fg="#ffffff").grid(row=3, column=0, padx=5, pady=5)  # Label untuk deskripsi
-    entry_deskripsi = tk.Entry(frame_input, bg="#ffffff", fg="#000000")  # Entry untuk mengisi deskripsi
+    tk.Label(frame_input, text="Deskripsi:", bg="#273c75", fg="#ffffff").grid(row=3, column=0, padx=5, pady=5)
+    entry_deskripsi = tk.Entry(frame_input, bg="#ffffff", fg="#000000")
     entry_deskripsi.grid(row=3, column=1, padx=5, pady=5)
 
     tk.Button(root,
               text="Tambah Jadwal",
               command=tambah_jadwal,
               bg="#74b9ff",
-              fg="#000000").pack(pady=5)  # Button untuk menambah jadwal
-
-    tk.Button(root, 
+              fg="#000000").pack(pady=5)
+    tk.Button(root,
               text="Lihat Jadwal",
               command=lihat_jadwal,
               bg="#74b9ff",
-              fg="#000000").pack(pady=5)  # Button untuk melihat jadwal
+              fg="#000000").pack(pady=5)
 
-    frame_cari = tk.Frame(root, bg="#273c75")  # Frame untuk mencari jadwal
+    frame_cari = tk.Frame(root, bg="#273c75")
     frame_cari.pack(pady=10)
 
-    tk.Label(frame_cari, text="Cari Jadwal:", bg="#273c75", fg="#ffffff").grid(row=0, column=0, padx=5, pady=5)  # Label untuk mencari jadwal
-    entry_cari = tk.Entry(frame_cari, bg="#ffffff", fg="#000000")  # Entry untuk mengisi keyword pencarian
+    tk.Label(frame_cari, text="Cari Jadwal:", bg="#273c75", fg="#ffffff").grid(row=0, column=0, padx=5, pady=5)
+    entry_cari = tk.Entry(frame_cari, bg="#ffffff", fg="#000000")
     entry_cari.grid(row=0, column=1, padx=5, pady=5)
 
     tk.Button(frame_cari,
               text="Cari",
               command=cari_jadwal,
               bg="#74b9ff",
-              fg="#000000").grid(row=0, column=2, padx=5)  # Button untuk melakukan pencarian
+              fg="#000000").grid(row=0, column=2, padx=5)
 
-    tk.Button(root, 
+    tk.Button(root,
               text="Import dari CSV",
               command=import_csv,
               bg="#74b9ff",
-              fg="#000000").pack(pady=5)  # Button untuk mengimpor dari CSV
+              fg="#000000").pack(pady=5)
 
-    frame_hapus = tk.Frame(root, bg="#273c75")  # Frame untuk menghapus jadwal
+    frame_hapus = tk.Frame(root, bg="#273c75")
     frame_hapus.pack(pady=10)
 
-    tk.Label(frame_hapus, text="Hapus Jadwal (ID):", bg="#273c75", fg="#ffffff").grid(row=0, column=0, padx=5, pady=5)  # Label untuk menghapus jadwal
-    entry_hapus = tk.Entry(frame_hapus, bg="#ffffff", fg="#000000")  # Entry untuk mengisi ID jadwal yang akan dihapus
+    tk.Label(frame_hapus, text="Hapus Jadwal (ID):", bg="#273c75", fg="#ffffff").grid(row=0, column=0, padx=5, pady=5)
+    entry_hapus = tk.Entry(frame_hapus, bg="#ffffff", fg="#000000")
     entry_hapus.grid(row=0, column=1, padx=5, pady=5)
 
     tk.Button(frame_hapus,
               text="Hapus",
               command=hapus_jadwal,
               bg="#e74c3c",
-              fg="#ffffff").grid(row=0, column=2, padx=5, pady=5)  # Button untuk menghapus jadwal
+              fg="#ffffff").grid(row=0, column=2, padx=5, pady=5)
 
-    tk.Button(root, 
+    tk.Button(root,
               text="Update Jadwal",
               command=update_jadwal_popup,
               bg="#f39c12",
-              fg="#ffffff").pack(pady=5)  # Button untuk mengupdate jadwal
+              fg="#ffffff").pack(pady=5)
 
     output_text = tk.Text(root,
                           height=10,
                           width=50,
                           bg="#ffffff",
-                          fg="#000000")  # Text untuk menampilkan output jadwal
+                          fg="#000000")
     output_text.pack(pady=10)
 
-    root.mainloop()  # Memulai loop utama Tkinter untuk menampilkan GUI
+    root.mainloop()
 
-show_gui()  # Memanggil fungsi untuk menampilkan GUI
+show_gui()
+
