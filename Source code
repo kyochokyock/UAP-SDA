@@ -194,13 +194,13 @@ def show_gui():
     entry_deskripsi = tk.Entry(frame_input, bg="#ffffff", fg="#000000")  # Entry untuk mengisi deskripsi
     entry_deskripsi.grid(row=3, column=1, padx=5, pady=5)
 
- tk.Button(root,
+    tk.Button(root,
               text="Tambah Jadwal",
               command=tambah_jadwal,
               bg="#74b9ff",
               fg="#000000").pack(pady=5)  # Button untuk menambah jadwal
 
-    tk.Button(root,  #List GUI
+    tk.Button(root, 
               text="Lihat Jadwal",
               command=lihat_jadwal,
               bg="#74b9ff",
@@ -219,7 +219,7 @@ def show_gui():
               bg="#74b9ff",
               fg="#000000").grid(row=0, column=2, padx=5)  # Button untuk melakukan pencarian
 
-    tk.Button(root,  #List GUI
+    tk.Button(root, 
               text="Import dari CSV",
               command=import_csv,
               bg="#74b9ff",
@@ -238,7 +238,7 @@ def show_gui():
               bg="#e74c3c",
               fg="#ffffff").grid(row=0, column=2, padx=5, pady=5)  # Button untuk menghapus jadwal
 
-    tk.Button(root,  #List GUI
+    tk.Button(root, 
               text="Update Jadwal",
               command=update_jadwal_popup,
               bg="#f39c12",
